@@ -1,0 +1,14 @@
+.as-image-carousel {}
+.as-image-carousel .space-filler {}
+.as-image-carousel .space-filler .image-container { position:absolute; overflow:hidden; }
+.as-image-carousel .space-filler .image-container .slider { position:relative; transition: left 0.5s; }
+.as-image-carousel .space-filler .image-container .slide1 { left:0; }
+.as-image-carousel .space-filler .image-container .slide2 { left:-100%; }
+.as-image-carousel .space-filler .image-container .slide3 { left:-200%; }
+.as-image-carousel .space-filler .image-container .slide4 { left:-300%; }
+.as-image-carousel .space-filler .image-container .slide4 { left:-400%; }
+.as-image-carousel .space-filler .image-container .slide5 { left:-500%; }
+.as-image-carousel .space-filler .image-container .slide6 { left:-600%; }
+.as-image-carousel .space-filler .image-container .slide7 { left:-700%; }
+.as-image-carousel .space-filler .image-container .slide8 { left:-800%; }
+.as-image-carousel .space-filler .image-container .slide9 { left:-900%; }

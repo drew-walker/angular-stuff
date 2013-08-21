@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-ng-app="angularStuff">
+	<head>
+		<meta charset="utf-8" />
+		<title>Useful Angular Stuff</title>
+		<link rel="Stylesheet" href="modules/imageCarousel/imageCarousel.css" />
+	</head>
+	<body data-ng-controller="angularStuffCtrl">
+		<!-- imageCarousel -->
+		<h1>Image Carousel</h1>
+<div data-image-carousel class="as-image-carousel" data-ng-model="carouselImages" data-carousel-width="carouselWidth" data-carousel-height="carouselHeight" data-carousel-show-previous="carouselShowPrevious" data-carousel-show-numbers="carouselShowNumbers" data-carousel-show-next="carouselShowNext">
+	<div class="space-filler" style="width:{{width+'px'}}; height:{{height+'px'}};">
+		<div class="image-container" style="width:{{width+'px'}}; height:{{height+'px'}};">
+			<div class="slider slide{{slideNumber}}" style="width:{{width*images.length}}px; height:{{height+'px'}};">
+				<img data-ng-repeat="image in images" data-ng-src="{{image}}" style="width:{{width+'px'}}; height:{{height+'px'}}" />
+			</div>
+		</div>
+	</div>
+	<div class="navigation" data-ng-show="showNavigation">
+		<a href="" data-ng-click="previousSlide()" data-ng-show="showPrevious">Previous</a>
+		<a href="" data-ng-repeat="image in images" data-ng-click="goToSlide($index + 1)" data-ng-class="{ 'active' : $index + 1 == slideNumber }" data-ng-show="showNumbers">{{$index + 1}}</a>
+		<a href="" data-ng-click="nextSlide()" data-ng-show="showNext">Next</a>
+	</div>
+</div>
+		<!-- /imageCarousel -->
+		<h2>Options</h2>		
+		Width: <input type="number" data-ng-model="carouselWidth" /><br />
+		Height: <input type="number" data-ng-model="carouselHeight" /><br />
+		<label>Show Previous: <input type="checkbox" data-ng-model="carouselShowPrevious" /></label><br />
+		<label>Show Numbers: <input type="checkbox" data-ng-model="carouselShowNumbers" /></label><br />
+		<label>Show Next: <input type="checkbox" data-ng-model="carouselShowNext" /></label>
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="modules/angularStuff/angularStuffModule.js"></script>
+		<script src="modules/angularStuff/angularStuffCtrl.js"></script>
+		<script src="modules/imageCarousel/imageCarouselModule.js"></script>
+		<script src="modules/imageCarousel/imageCarouselController.js"></script>
+		<script src="modules/imageCarousel/imageCarouselDirective.js"></script>
+	</body>
+</html>

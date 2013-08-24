@@ -9,9 +9,11 @@ angular.module('imageCarousel').directive('imageCarousel', ['$timeout', function
 			images : '=ngModel',
 			width : '=carouselWidth',
 			height : '=carouselHeight',
+			autoplay : '=carouselAutoplay',
 			showPrevious : '=carouselShowPrevious',
 			showNumbers : '=carouselShowNumbers',
-			showNext : '=carouselShowNext'
+			showNext : '=carouselShowNext',
+			interval : '=carouselInterval'
 		}
 	};
 }]);

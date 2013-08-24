@@ -5,10 +5,17 @@
 		<title>Useful Angular Stuff</title>
 		<link rel="Stylesheet" href="modules/imageCarousel/imageCarousel.css" />
 	</head>
-	<body data-ng-controller="angularStuffCtrl">
-		<!-- imageCarousel -->
-		<h1>Image Carousel</h1>
-<div data-image-carousel class="as-image-carousel" data-ng-model="carouselImages" data-carousel-width="carouselWidth" data-carousel-height="carouselHeight" data-carousel-show-previous="carouselShowPrevious" data-carousel-show-numbers="carouselShowNumbers" data-carousel-show-next="carouselShowNext">
+	<body data-ng-controller="angularStuffController">
+		<table width="100%">
+			<tr>
+				<td width="50%"><h1>Image Carousel</h1></td>
+				<td width="50%">
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+<div data-image-carousel class="as-image-carousel" data-ng-model="carouselImages" data-carousel-autoplay="carouselAutoplay" data-carousel-interval="carouselInterval" data-carousel-width="carouselWidth" data-carousel-height="carouselHeight" data-carousel-show-previous="carouselShowPrevious" data-carousel-show-numbers="carouselShowNumbers" data-carousel-show-next="carouselShowNext">
 	<div class="space-filler" style="width:{{width+'px'}}; height:{{height+'px'}};">
 		<div class="image-container" style="width:{{width+'px'}}; height:{{height+'px'}};">
 			<div class="slider slide{{slideNumber}}" style="width:{{width*images.length}}px; height:{{height+'px'}};">
@@ -17,21 +24,27 @@
 		</div>
 	</div>
 	<div class="navigation" data-ng-show="showNavigation">
-		<a href="" data-ng-click="previousSlide()" data-ng-show="showPrevious">Previous</a>
+		<a href="" data-ng-click="previousSlide()" data-ng-show="showPrevious" class="previous-button">Previous</a>
 		<a href="" data-ng-repeat="image in images" data-ng-click="goToSlide($index + 1)" data-ng-class="{ 'active' : $index + 1 == slideNumber }" data-ng-show="showNumbers">{{$index + 1}}</a>
-		<a href="" data-ng-click="nextSlide()" data-ng-show="showNext">Next</a>
+		<a href="" data-ng-click="nextSlide()" data-ng-show="showNext" class="nextButton">Next</a>
 	</div>
 </div>
-		<!-- /imageCarousel -->
+				</td>
+				<td>
 		<h2>Options</h2>		
 		Width: <input type="number" data-ng-model="carouselWidth" /><br />
 		Height: <input type="number" data-ng-model="carouselHeight" /><br />
+		<label>Autoplay: <input type="checkbox" data-ng-model="carouselAutoplay" /></label><br />
+		Interval: <input type="number" data-ng-model="carouselInterval" /><br />
 		<label>Show Previous: <input type="checkbox" data-ng-model="carouselShowPrevious" /></label><br />
 		<label>Show Numbers: <input type="checkbox" data-ng-model="carouselShowNumbers" /></label><br />
-		<label>Show Next: <input type="checkbox" data-ng-model="carouselShowNext" /></label>
+		<label>Show Next: <input type="checkbox" data-ng-model="carouselShowNext" /></label><br />
+				</td>
+			</tr>
+		</table>
 		<script src="lib/angular/angular.min.js"></script>
 		<script src="modules/angularStuff/angularStuffModule.js"></script>
-		<script src="modules/angularStuff/angularStuffCtrl.js"></script>
+		<script src="modules/angularStuff/angularStuffController.js"></script>
 		<script src="modules/imageCarousel/imageCarouselModule.js"></script>
 		<script src="modules/imageCarousel/imageCarouselController.js"></script>
 		<script src="modules/imageCarousel/imageCarouselDirective.js"></script>

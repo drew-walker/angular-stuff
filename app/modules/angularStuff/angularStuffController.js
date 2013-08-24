@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularStuff').controller('angularStuffCtrl', ['$scope', '$timeout', function($scope, $timeout) {
+angular.module('angularStuff').controller('angularStuffController', ['$scope', '$timeout', function($scope, $timeout) {
 	$scope.carouselImages = [
 		'http://shareyourwallpapers.com/upload/wallpaper/nature/mountains/mountains_ad3ca3d2.jpg',
 		'http://cdn.obsidianportal.com/assets/9389/magnificent-castle-in-the-mountain_size_800x600.jpg',
@@ -8,4 +8,6 @@ angular.module('angularStuff').controller('angularStuffCtrl', ['$scope', '$timeo
 	];
 	$scope.carouselWidth = 400;
 	$scope.carouselHeight = 300;
+	$scope.carouselInterval = 1000;
+	$scope.carouselAutoplay = true;
 }]);
